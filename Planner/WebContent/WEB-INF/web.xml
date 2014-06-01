@@ -24,7 +24,7 @@
 	</context-param>
 	<context-param>
 		<param-name>primefaces.THEME</param-name>
-		<param-value>none</param-value>
+		<param-value>afterwork</param-value>
 	</context-param>
 	<listener>
 		<listener-class>com.sun.faces.config.ConfigureListener</listener-class>
