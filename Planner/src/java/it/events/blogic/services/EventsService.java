@@ -31,8 +31,14 @@ public class EventsService implements IEventsService {
 
 	@Override
 	public List<Events> loadEventsByUserId(int userId) {
-		// TODO Auto-generated method stub
-		return null;
+		if (userId == 0) {
+			throw new RuntimeException("userId can't be 0");
+		}
+		String sql = "SELECT * FROM events WHERE userId=:userId";
+		Query query = entityManager.createNativeQuery(sql);
+		query.setParameter("userId", userId);
+
+		return query.getResultList();
 	}
 
 	@SuppressWarnings("unchecked")
